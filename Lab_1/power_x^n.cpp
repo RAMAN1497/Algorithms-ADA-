@@ -1,0 +1,30 @@
+#include <iostream>
+#include <chrono>
+using namespace std;
+using namespace std::chrono;
+
+// Binary Exponentiation (O(log n))
+int  power(int x, int n) {
+    if(n==0){
+        return 1;
+    }
+    int half = power(x, n / 2);
+
+    if (n % 2 == 0)
+        return half * half;
+    else
+        return x * half * half;
+}
+
+int main() {
+    int x,n ;
+    cout<<"Enter the value of x";//base
+    cin>>x;   
+    cout<<"Enter the value of n";//power
+    cin>>n; 
+    
+           cout<< power(x, n);
+           
+
+    return 0;
+}
